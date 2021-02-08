@@ -1,0 +1,33 @@
+<form [formGroup]="cardInfoForm">
+  <div class="form-container">
+    <div class="personal-information">
+      <h1>Payment Information</h1>
+    </div>
+
+    <input id="input-field" type="text" formControlName= "cardNumber" placeholder="Card number" />
+    <div *ngIf= "isValidData('cardNumber')" class="alert-danger" role="alert">
+      Invalid data
+    </div>
+    <input id="input-field" type="text" formControlName= "cardName" placeholder="Card holder name" />
+    <div *ngIf= "isValidData('cardName')" class="alert-danger" role="alert">
+      Invalid data
+    </div>
+    <input id="column-left" type="text" formControlName= "expiryDate" placeholder="MM / YY" />
+    <div *ngIf= "isValidData('expiryDate')" class="alert-danger" role="alert">
+      Invalid data
+    </div>
+    <input id="column-right" type="text" formControlName= "securityCode" placeholder="CCV" />
+    <div *ngIf= "isValidData('securityCode')" class="alert-danger" role="alert">
+      Invalid data
+    </div>
+    <div class="card-wrapper"></div>
+    <input id="column-left" type="text" formControlName= "cardAmount" placeholder="amount" />
+    <div class="card-wrapper"></div>
+    <div *ngIf= "isValidData('cardAmount')" class="alert-danger" role="alert">
+      Invalid data
+    </div>
+  </div>
+
+  <input id="input-button" type="submit" (click) = "proceed()"/>
+
+</form>
